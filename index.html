@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArmStrong Number</title>
+    <style>
+    body{
+        background-color: blue;
+    }
+
+    </style>
+</head>
+<body>
+  <h1>Checking ArmStrong Number</h1>
+  <div id="cont">
+  <input type="text" value="" placeholder="Enter Three Number" id="input">
+</div>
+    <script>
+
+      let div = document.getElementById("cont");
+      let input = document.getElementById('input');
+      let btn = document.createElement("button");
+      let output = document.createElement("p");
+      btn.innerText = "CheckNumber";
+      btn.addEventListener("click",isArmStrong);
+      div.append(btn);
+      div.append(output);
+
+
+      function isArmStrong(){
+        let num = parseInt(input.value);
+        let result = 0;
+        let x = 0;
+
+        while(num > 0){
+          x = num%10;
+
+          num =Math.floor(num/10);
+          result += x*x*x
+        }
+        if(result === parseInt(input.value)){
+          output.innerText = "ArmStrong Number";
+        }else{
+          output.innerText = "Not ArmStrong Number";
+        }
+      }
+
+    </script>
+</body>
+</html
